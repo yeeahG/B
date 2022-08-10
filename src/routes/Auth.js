@@ -40,7 +40,8 @@ const Auth = () => {
         <input type="submit" value="Log in" />
       </form>
       <div>
-        <button>Continue with GOOGLE</button>
+        <button>Google</button>
+        <button>Github</button>
       </div>
     </div>
   )
