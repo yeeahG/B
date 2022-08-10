@@ -1,10 +1,16 @@
+import { dbService } from 'myFirebase';
 import React, { useState } from 'react'
 
 const Home = () => {
   const [b, setB] = useState("");
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
+    await dbService.collection("Bees").add({
+      b,
+      createdAt: Date.now(),
+    });
+    setB("");
   }
 
   const onChange = (event) => {
