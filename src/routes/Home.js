@@ -1,3 +1,4 @@
+import BText from 'components/BText';
 import { dbService } from 'myFirebase';
 import React, { useEffect, useState } from 'react'
 
@@ -48,9 +49,11 @@ const Home = ( {userObj} ) => {
 
       <div>
         {bs.map( it => 
-          <div key={it.id}>
-            <h4>{it.text}</h4>
-          </div>
+          <BText 
+            key={it.id} 
+            bObj={it} 
+            isOwner={it.creatorId === userObj.uid} 
+          />
         )}
       </div>
     </div>
