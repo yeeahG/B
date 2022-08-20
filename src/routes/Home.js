@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 const Home = ( {userObj} ) => {
   const [b, setB] = useState("");
   const [bs, setBs] = useState([]);
+  const [fileAttach, setFileAttach] = useState();
 
   useEffect(() => {
     dbService.collection("Bees").onSnapshot(snapshot => {
@@ -41,7 +42,9 @@ const Home = ( {userObj} ) => {
 
     const fileReader = new FileReader();
     fileReader.onloadend = (finishedEvent) => {
-      console.log(finishedEvent);
+      //console.log(finishedEvent);
+      const { currentTarget: {result} } = finishedEvent;
+      setFileAttach(result);
     }
     fileReader.readAsDataURL(file);
   }
@@ -57,10 +60,13 @@ const Home = ( {userObj} ) => {
           maxLength={120} 
         />
         <input type="file" accept="image/*" onChange={onFileChange} />
-        <input 
-          type="submit" 
-          value="Be"
-        />
+        <input type="submit"  value="Be" />
+        {fileAttach && 
+        <div>
+          <img src={fileAttach} width="50px" height="50px" /> 
+          <button>X</button>
+        </div>
+        }
       </form>
 
       <div>
