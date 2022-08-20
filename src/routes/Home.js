@@ -31,6 +31,11 @@ const Home = ( {userObj} ) => {
     setB(value);
   }
 
+
+  const onFileChange = (event) => {
+    console.log(event.target.files);
+  }
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -41,6 +46,7 @@ const Home = ( {userObj} ) => {
           placeholder="What's on ur mind?" 
           maxLength={120} 
         />
+        <input type="file" accept="image/*" onChange={onFileChange} />
         <input 
           type="submit" 
           value="Be"
