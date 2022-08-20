@@ -5,21 +5,13 @@ const Home = ( {userObj} ) => {
   const [b, setB] = useState("");
   const [bs, setBs] = useState([]);
 
-  const getBees = async () => {
-    const dbBees = await dbService.collection("Bees").get();
-    dbBees.forEach(document => {
-      const bsObject = {
-        ...document.data(),
-        id: document.id,
-      }
-      setBs(prev => [bsObject, ...prev])
-    })
-  }
-
   useEffect(() => {
-    getBees();
     dbService.collection("Bees").onSnapshot(snapshot => {
-      console.log("Something happend");
+      const bArray = snapshot.docs.map(doc => ({
+        id: doc.id, 
+        ...doc.data(),
+      }))
+      setBs(bArray);
     })
   }, [])
 
