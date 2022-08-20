@@ -37,19 +37,24 @@ const BText = ( {bObj, isOwner} ) => {
 
         {editing ? 
         <>
-            <form onSubmit={onSubmit}>
-                <input 
-                    type="text" 
-                    placeholder="Edit your B" 
-                    value={newB} required 
-                    onChange={onEditChange}
-                />
-                <input 
-                    type="submit" 
-                    value="Edit B"
-                />
-            </form>
-            <button onClick={editingToggle}>Cancel</button>
+            {isOwner 
+            &&
+            <>
+                <form onSubmit={onSubmit}>
+                    <input 
+                        type="text" 
+                        placeholder="Edit your B" 
+                        value={newB} required 
+                        onChange={onEditChange}
+                    />
+                    <input 
+                        type="submit" 
+                        value="Edit B"
+                    />
+                </form>
+                <button onClick={editingToggle}>Cancel</button>
+            </>
+            }
         </>
         :
         <>
