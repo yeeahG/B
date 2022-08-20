@@ -33,7 +33,17 @@ const Home = ( {userObj} ) => {
 
 
   const onFileChange = (event) => {
-    console.log(event.target.files);
+    // console.log(event.target.files);
+    const {
+      target: {files},
+    } = event;
+    const file = files[0];
+
+    const fileReader = new FileReader();
+    fileReader.onloadend = (finishedEvent) => {
+      console.log(finishedEvent);
+    }
+    fileReader.readAsDataURL(file);
   }
 
   return (
