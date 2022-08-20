@@ -18,12 +18,37 @@ const BText = ( {bObj, isOwner} ) => {
         setEditing( prev => !prev)
     }
 
+    const onEditChange = (event) => {
+        const {
+            target: {value},
+        } = event;
+        setNewB(value);
+    }
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        console.log(bObj, newB);
+        await dbService.doc(`Bees/${bObj.id}`).update({text: newB});
+        setEditing(false);
+    }
+
   return (
     <div>
 
         {editing ? 
         <>
-            <form><input type="text" placeholder="Edit your B" value={newB} required /></form>
+            <form onSubmit={onSubmit}>
+                <input 
+                    type="text" 
+                    placeholder="Edit your B" 
+                    value={newB} required 
+                    onChange={onEditChange}
+                />
+                <input 
+                    type="submit" 
+                    value="Edit B"
+                />
+            </form>
             <button onClick={editingToggle}>Cancel</button>
         </>
         :
