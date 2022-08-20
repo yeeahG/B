@@ -1,7 +1,7 @@
 import { dbService } from 'myFirebase';
 import React, { useEffect, useState } from 'react'
 
-const Home = () => {
+const Home = ( {userObj} ) => {
   const [b, setB] = useState("");
   const [bs, setBs] = useState([]);
 
@@ -18,13 +18,17 @@ const Home = () => {
 
   useEffect(() => {
     getBees();
+    dbService.collection("Bees").onSnapshot(snapshot => {
+      console.log("Something happend");
+    })
   }, [])
 
   const onSubmit = async (event) => {
     event.preventDefault();
     await dbService.collection("Bees").add({
-      b,
+      text: b,
       createdAt: Date.now(),
+      creatorId: userObj.uid,
     });
     setB("");
   }
@@ -53,7 +57,7 @@ const Home = () => {
       <div>
         {bs.map( it => 
           <div key={it.id}>
-            <h4>{it.b}</h4>
+            <h4>{it.text}</h4>
           </div>
         )}
       </div>
