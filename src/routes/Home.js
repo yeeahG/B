@@ -49,6 +49,10 @@ const Home = ( {userObj} ) => {
     fileReader.readAsDataURL(file);
   }
 
+  const onClearFile = () => {
+    setFileAttach(null);
+  }
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -64,7 +68,7 @@ const Home = ( {userObj} ) => {
         {fileAttach && 
         <div>
           <img src={fileAttach} width="50px" height="50px" /> 
-          <button>X</button>
+          <button onClick={onClearFile}>X</button>
         </div>
         }
       </form>
