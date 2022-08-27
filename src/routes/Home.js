@@ -42,7 +42,6 @@ const Home = ( {userObj} ) => {
 
     const fileReader = new FileReader();
     fileReader.onloadend = (finishedEvent) => {
-      //console.log(finishedEvent);
       const { currentTarget: {result} } = finishedEvent;
       setFileAttach(result);
     }
