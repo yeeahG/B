@@ -21,9 +21,13 @@ const Home = ( {userObj} ) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
-    const response = await uploadString(fileRef, fileAttach, "data_url");
-    const fileUrl = await getDownloadURL(response.ref);
+    let fileUrl = "";
+
+    if (fileAttach != "") {
+      const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+      const response = await uploadString(fileRef, fileAttach, "data_url");
+      fileUrl = await getDownloadURL(response.ref);
+    }
     
     const bObj = {
       text: b,
