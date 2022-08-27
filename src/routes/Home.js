@@ -1,6 +1,8 @@
 import BText from 'components/BText';
-import { dbService } from 'myFirebase';
 import React, { useEffect, useState } from 'react'
+import { dbService, storageService } from 'myFirebase';
+import { v4 as uuidv4 } from 'uuid';
+import { ref, uploadString } from "firebase/storage";
 
 const Home = ( {userObj} ) => {
   const [b, setB] = useState("");
@@ -19,12 +21,15 @@ const Home = ( {userObj} ) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    await dbService.collection("Bees").add({
-      text: b,
-      createdAt: Date.now(),
-      creatorId: userObj.uid,
-    });
-    setB("");
+    // await dbService.collection("Bees").add({
+    //   text: b,
+    //   createdAt: Date.now(),
+    //   creatorId: userObj.uid,
+    // });
+    // setB("");
+    const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+    const response = await uploadString(fileRef, fileAttach, "data_url");
+    console.log(response);
   }
 
   const onChange = (event) => {
