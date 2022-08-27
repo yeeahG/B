@@ -59,6 +59,7 @@ const BText = ( {bObj, isOwner} ) => {
         :
         <>
             <h4>{bObj.text}</h4>
+            {bObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />}
 
             {isOwner && (
                 <>

@@ -2,12 +2,12 @@ import BText from 'components/BText';
 import React, { useEffect, useState } from 'react'
 import { dbService, storageService } from 'myFirebase';
 import { v4 as uuidv4 } from 'uuid';
-import { ref, uploadString } from "firebase/storage";
+import { getDownloadURL, ref, uploadString } from "firebase/storage";
 
 const Home = ( {userObj} ) => {
   const [b, setB] = useState("");
   const [bs, setBs] = useState([]);
-  const [fileAttach, setFileAttach] = useState();
+  const [fileAttach, setFileAttach] = useState("");
 
   useEffect(() => {
     dbService.collection("Bees").onSnapshot(snapshot => {
@@ -21,15 +21,20 @@ const Home = ( {userObj} ) => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    // await dbService.collection("Bees").add({
-    //   text: b,
-    //   createdAt: Date.now(),
-    //   creatorId: userObj.uid,
-    // });
-    // setB("");
     const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
     const response = await uploadString(fileRef, fileAttach, "data_url");
-    console.log(response);
+    const fileUrl = await getDownloadURL(response.ref);
+    
+    const bObj = {
+      text: b,
+      createdAt: Date.now(),
+      creatorId: userObj.uid,
+      fileUrl
+    }
+    
+    await dbService.collection("Bees").add(bObj);
+    setB("");
+    setFileAttach("");
   }
 
   const onChange = (event) => {
@@ -54,7 +59,7 @@ const Home = ( {userObj} ) => {
   }
 
   const onClearFile = () => {
-    setFileAttach(null);
+    setFileAttach("");
   }
 
   return (
