@@ -1,4 +1,5 @@
-import { dbService } from 'myFirebase';
+import { deleteObject, ref } from 'firebase/storage';
+import { dbService, storageService } from 'myFirebase';
 import React, { useState } from 'react'
 
 const BText = ( {bObj, isOwner} ) => {
@@ -8,9 +9,12 @@ const BText = ( {bObj, isOwner} ) => {
     const onDeleteClick = async () => {
         const ok = window.confirm("Are you really delete?");
         console.log(ok);
+        const urlRef = ref(storageService, bObj.fileUrl);
+
         if (ok) {
             //delete
             await dbService.doc(`Bees/${bObj.id}`).delete();
+            await deleteObject(urlRef);
         }
     }
 
