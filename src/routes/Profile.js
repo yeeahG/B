@@ -1,3 +1,4 @@
+import { collection, getDocs, query, where } from 'firebase/firestore';
 import { authService, dbService } from 'myFirebase'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -11,12 +12,14 @@ const Profile = ({ userObj }) => {
   }
 
   const getMyBees = async() => {
-    const bees = await dbService
-      .collection("Bees")
-      .where("creatorId", "==", userObj.uid)
-      .orderBy("createdAt", "asc")
-      .get();
-      console.log(bees.docs.map((it) => it._delegate._document.data.value.mapValue.fields));
+    const data = query(
+      collection(dbService, "Bees"), where("creatorId", "==", userObj.uid)
+    );
+
+    const queryBees = await getDocs(data);
+    queryBees.forEach((it) => {
+      console.log(it.data());
+    })
   }
 
   useEffect(() => {
