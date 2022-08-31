@@ -1,8 +1,10 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { dbService } from 'myFirebase';
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-const MyBe = ({ userObj }) => {
+const MyBList = ({ userObj }) => {
+  const [myList, setMyList] = useState([]);
+
   const getMyBees = async() => {
     const data = query(
       collection(dbService, "Bees"), where("creatorId", "==", userObj.uid)
@@ -10,7 +12,8 @@ const MyBe = ({ userObj }) => {
 
     const queryBees = await getDocs(data);
     queryBees.forEach((it) => {
-      console.log(it.data());
+      //console.log(it.data());
+      setMyList(it.data().text);
     })
   }
 
@@ -19,8 +22,12 @@ const MyBe = ({ userObj }) => {
   },[])
 
   return (
-    <div>MyBe</div>
+    <>
+      <div>
+        {myList}
+      </div>
+    </>
   )
 }
 
-export default MyBe
+export default MyBList
