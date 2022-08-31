@@ -7,9 +7,16 @@ function App() {
   const [userObj, setUserObj] = useState(null);
 
   useEffect(() => {
-    authService.onAuthStateChanged( (user) => {
+    //authService.onAuthStateChanged( (user) => {
+      authService.onAuthStateChanged( async (user) => {
       if(user) {
+        if (user.displayName === null) {
+          await user.updateProfile({
+            displayName: "B",
+          });
+        }
         setUserObj(user);
+
       }
       setInit(true);
     });
