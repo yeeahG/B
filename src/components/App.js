@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import AppRouter from "components/Router";
 import { authService } from "myFirebase";
+import Header from "./Header";
+import './App.css'
 
 function App() {
   const [init, setInit] = useState(false);
   const [userObj, setUserObj] = useState(null);
 
   useEffect(() => {
-    //authService.onAuthStateChanged( (user) => {
-      authService.onAuthStateChanged( async (user) => {
+    authService.onAuthStateChanged( async (user) => {
       if(user) {
         if (user.displayName === null) {
           await user.updateProfile({
@@ -36,15 +37,18 @@ function App() {
   
   return (
     <>
-      {init ? 
-      <AppRouter 
-        isLoggedIn={Boolean(userObj)} 
-        userObj={userObj} 
-        refreshUser={refreshUser}
-      /> 
-      : 
-      "Loading..." 
-      }
+      <div className="app__container">
+        <Header />
+        {init ? 
+        <AppRouter 
+          isLoggedIn={Boolean(userObj)} 
+          userObj={userObj} 
+          refreshUser={refreshUser}
+        /> 
+        : 
+        "Loading..." 
+        }
+      </div>
       <footer>&copy; B {new Date().getFullYear()}</footer>
     </>
   );

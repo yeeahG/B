@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Collegiate+One&family=Luckiest+Guy&display=swap');
+
+.App {
+    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app__container {
+    display: flex;
+    margin: 30px;
+}
+
+.home__title {
+    font-size: 100px;
+   /*font-family: 'Luckiest Guy', cursive;*/
+    font-family: 'Alumni Sans Collegiate One', sans-serif;
+    width: 20vw;
+    text-align: center;
+}
