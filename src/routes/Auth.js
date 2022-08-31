@@ -56,6 +56,10 @@ const Auth = () => {
 
   return (
     <div>
+      <span onClick={toggleAccount}>
+        {newAccount ? "Login" : "Create Account"}
+      </span>
+      
       {error}
       <form onSubmit={onSubmit} >
         <input 
@@ -77,9 +81,6 @@ const Auth = () => {
         <input type="submit" value={newAccount ? "Create Account" : "Log in"} />
       </form>
 
-      <span onClick={toggleAccount}>
-        {newAccount ? "Login" : "Create Account"}
-      </span>
 
       <div>
         <button name="google" onClick={onSocialClick}>Google</button>

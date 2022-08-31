@@ -6,7 +6,7 @@ import Navigation from 'components/Navigation';
 import Profile from 'routes/Profile';
 import Chat from 'routes/Chat';
 
-const AppRouter = ( {isLoggedIn, userObj} ) => {
+const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
 
   return (
     <Router>
@@ -16,7 +16,7 @@ const AppRouter = ( {isLoggedIn, userObj} ) => {
           <>
             <Route path="/" element={<Home userObj={userObj} />} />
             <Route path="/chat" element={<Chat userObj={userObj} />} />
-            <Route path="/profile" element={<Profile userObj={userObj} />} />
+            <Route path="/profile" element={<Profile userObj={userObj} refreshUser={refreshUser} />} />
           </>
         :
           <>
