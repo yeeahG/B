@@ -29,7 +29,7 @@ const Profile = ({ userObj, refreshUser }) => {
     */
     if(userObj.displayName !== newDisplayName){
       await updateProfile(authService.currentUser, { 
-        displayName: newDisplayName 
+        displayName: newDisplayName,
       });
       refreshUser();
       }
