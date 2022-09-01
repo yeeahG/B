@@ -5,6 +5,9 @@
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
+* {
+}
+
 a {
     text-decoration: none;
 }
@@ -15,16 +18,19 @@ ul {
 }
 
 .app__container {
+    /*background-color: #9ec9eb;*/
     display: flex;
     margin: 30px;
 }
 
 .home__title {
-    font-size: 100px;
+    font-size: 200px;
    /*font-family: 'Luckiest Guy', cursive;*/
     font-family: 'Alumni Sans Collegiate One', sans-serif;
     width: 15%;
     text-align: center;
+    /*color: #f5ca66;*/
+    color: #e65c64;
 }
 
 .container {
