@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import AppRouter from "components/Router";
-import { authService } from "myFirebase";
-import Header from "./Header";
+import AppRouter from "./AppRouter";
+import { authService } from "../myFirebase";
 import './App.css'
+import Header from "./Header";
 
 function App() {
   const [init, setInit] = useState(false);
