@@ -41,22 +41,24 @@ const Profile = ({ userObj, refreshUser }) => {
   }
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input 
-          type="text" 
-          placeholder="Display name" 
-          onChange={onChange}
-          value={newDisplayName}
-        />
-        <input type="submit" value="Update" />
-      </form>
-      <button onClick={onLogOutClick}>Log Out</button>
+    <div>
+      <div>
+        <form onSubmit={onSubmit}>
+          <input 
+            type="text" 
+            placeholder="Display name" 
+            onChange={onChange}
+            value={newDisplayName}
+          />
+          <input type="submit" value="Update" />
+        </form>
+        <button onClick={onLogOutClick}>Log Out</button>
+      </div>
 
       <div>
         <MyBList userObj={userObj} />
       </div>
-    </>
+    </div>
   )
 }
 
