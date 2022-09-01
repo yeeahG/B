@@ -41,7 +41,7 @@ const Profile = ({ userObj, refreshUser }) => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <div>
         <form onSubmit={onSubmit}>
           <input 

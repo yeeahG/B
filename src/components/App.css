@@ -9,6 +9,11 @@ a {
     text-decoration: none;
 }
 
+ul {
+    list-style: none;
+    padding: 0;
+}
+
 .app__container {
     display: flex;
     margin: 30px;
@@ -18,6 +23,10 @@ a {
     font-size: 100px;
    /*font-family: 'Luckiest Guy', cursive;*/
     font-family: 'Alumni Sans Collegiate One', sans-serif;
-    width: 20vw;
+    width: 15%;
     text-align: center;
+}
+
+.container {
+    width: 75%
 }

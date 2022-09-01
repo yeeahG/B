@@ -2,7 +2,7 @@ import React from 'react'
 
 const Chat = ({ userObj }) => {
   return (
-    <div>
+    <div className='container'>
 
       <h3>Be with</h3>
       <span>Enter B room name</span>

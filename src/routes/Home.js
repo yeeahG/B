@@ -67,7 +67,7 @@ const Home = ( {userObj} ) => {
   }
 
   return (
-    <div>
+    <div className='container'>
       <form onSubmit={onSubmit}>
         <input 
           value={b}
