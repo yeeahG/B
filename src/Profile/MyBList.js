@@ -5,7 +5,6 @@ import EditProfile from './EditProfile';
 
 const MyBList = ({ userObj }) => {
   const [myList, setMyList] = useState([]);
-  const [myPhoto, setMyPhoto] = useState("");
 
   const getMyBees = async() => {
     const data = query(
@@ -21,22 +20,13 @@ const MyBList = ({ userObj }) => {
 
   useEffect(() => {
     getMyBees();
-
-    dbService.collection("Profile").onSnapshot(snapshot => {
-      const ProfilePotoArray = snapshot.docs.map(doc => ({
-        id: doc.id, 
-        ...doc.data(),
-      }))
-      setMyPhoto(ProfilePotoArray);
-    })
-
   },[])
 
   return (
     <>
 
       {/* {userObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />} */}
-      <EditProfile />
+      <EditProfile userObj={userObj} />
       
       <div>
         <h3>내 글 목록</h3>

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const chatHome = () => {
+const ChatHome = () => {
   return (
     <div>
-      chatHome
+      ChatHome
 
     </div>
   )
 }
 
-export default chatHome
+export default ChatHome

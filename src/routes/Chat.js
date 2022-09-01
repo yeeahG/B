@@ -1,4 +1,4 @@
-import chatHome from 'Chat/views/chatHome'
+import ChatHome from 'Chat/views/ChatHome'
 import React from 'react'
 
 const Chat = ({ userObj }) => {
@@ -19,7 +19,7 @@ const Chat = ({ userObj }) => {
         />
       </form>
 
-      <chatHome />
+      <ChatHome />
 
     </div>
   )
