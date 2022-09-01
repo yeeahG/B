@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Navigation = ({ userObj }) => {
   return (
-    <nav style={{width: "10%"}} >
+    <nav className='navi__container' >
       <ul>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/chat">Talk to B</Link></li>

@@ -36,3 +36,13 @@ ul {
 .container {
     width: 75%
 }
+
+.navi__container {
+    width: 10%;
+    border: 1px solid #789bb5;
+    background-color: #e65c64;
+}
+
+.navi__container li {
+    color: white;
+}
