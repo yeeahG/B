@@ -13,7 +13,6 @@ const MyBList = ({ userObj }) => {
 
     const queryBees = await getDocs(data);
     queryBees.forEach((it) => {
-      //console.log(it.data());
       setMyList(it.data().text);
     })
   }
@@ -24,8 +23,6 @@ const MyBList = ({ userObj }) => {
 
   return (
     <>
-
-      {/* {userObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />} */}
       <EditProfile userObj={userObj} />
       
       <div>
