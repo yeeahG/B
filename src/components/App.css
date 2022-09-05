@@ -10,6 +10,7 @@
 
 a {
     text-decoration: none;
+    color: #f7f6f2;
 }
 
 ul {
@@ -27,7 +28,7 @@ ul {
 }
 
 .active {
-    color: #f7f6f2;
+    color: #789bb5;
 }
 
 .app__container {
