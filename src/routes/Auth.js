@@ -21,13 +21,13 @@ const Auth = () => {
   }
 
   return (
-    <div className='authform__container'>
+    <div className='authHome__container'>
       <div className='auth__header'><Header /></div>
       <AuthForm />
 
       <div className='auth__btn'>
-        <button name="google" onClick={onSocialClick}>Google</button>
-        <button name="github" onClick={onSocialClick}>Github</button>
+        <button className='authInput__btn' name="google" onClick={onSocialClick}>Google</button>
+        <button className='authInput__btn' name="github" onClick={onSocialClick}>Github</button>
       </div>
     </div>
   )

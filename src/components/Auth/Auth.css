@@ -2,12 +2,62 @@
     
 }
 
-.authform__container {
+.authHome__container {
     margin: 0 auto;
+    width: 100%;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
 }
 
 .auth__header {
     display: block;
+}
+
+.auth__btn {
+    display: grid;
+    margin-top: 3rem;
+    grid-gap: 0.5rem;
+    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+/*AuthForm*/
+
+.authForm__container {
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.authInput {
+    border: none;
+    outline: none;
+    place-content: center;
+    justify-self: stretch;
+    align-self: stretch;
+    min-height: calc(2rem + 2px);
+}
+
+.input__border {
+    margin: .4rem 0;
+    line-height: 1rem;
+    min-height: calc(2rem + 2px);
+    align-items: center;
+    padding: 0.25rem 1rem;
+    border: 1px solid #e65c64;
+}
+
+.authInput__btn {
+    cursor: pointer;
+    border-radius: 100vw;
+    color: #f7f6f2;
+    background: #e65c64;
+    border: none;
+    min-height: calc(2rem + 2px);
+}
+
+.account__btn {
+    cursor: pointer;
 }
