@@ -44,38 +44,38 @@ const AuthForm = () => {
     <div>
         {error}
         <form onSubmit={onSubmit} className='authForm__container' >
-            <label className='input__border'>
-                <input 
-                    required 
-                    name="email"
-                    type="text" 
-                    placeholder="Email" 
-                    value={email} 
-                    onChange={onChange}
-                    className='authInput'
-                />
-            </label>
-            <label className='input__border'>
-                <input 
-                    required 
-                    name="password"
-                    type="password" 
-                    placeholder="Password" 
-                    value={password} 
-                    onChange={onChange}
-                    className='authInput'
-                />
-            </label>
+          <label className='input__border'>
             <input 
-                type="submit" 
-                className='authInput__btn'
-                value={newAccount ? "Create Account" : "Log in"} 
+              required 
+              name="email"
+              type="text" 
+              placeholder="Email" 
+              value={email} 
+              onChange={onChange}
+              className='input'
             />
-        </form>
+          </label>
+          <label className='input__border'>
+            <input 
+              required 
+              name="password"
+              type="password" 
+              placeholder="Password" 
+              value={password} 
+              onChange={onChange}
+              className='input'
+            />
+          </label>
+          <input 
+            type="submit" 
+            className='authInput__btn'
+            value={newAccount ? "Create Account" : "Log in"} 
+          />
+      </form>
         
-        <span onClick={toggleAccount} className='account__btn'>
-            {newAccount ? "Already have an Account?" : "Create Account"}
-        </span>
+      <span onClick={toggleAccount} className='account__btn'>
+        {newAccount ? "Already have an Account?" : "Create Account"}
+      </span>
 
     </div>
   )

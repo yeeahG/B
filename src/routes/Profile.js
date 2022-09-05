@@ -34,22 +34,33 @@ const Profile = ({ userObj, refreshUser }) => {
 
   return (
     <div className='container'>
+
+      <div>
+        <h2>Info</h2>
+        <div>
+          <button className='button' onClick={onLogOutClick}>Log Out</button>
+        </div>
+      </div>
+
       <div>
         <form onSubmit={onSubmit}>
-          <input 
-            type="text" 
-            placeholder="Display name" 
-            onChange={onChange}
-            value={newDisplayName}
-          />
-          <input type="submit" value="Update" />
+          <label className='input__border'>
+            <input 
+              type="text" 
+              placeholder="Display name" 
+              onChange={onChange}
+              value={newDisplayName}
+              className='input'
+            />
+          </label>
+          <input className='button' type="submit" value="Update" />
         </form>
-        <button onClick={onLogOutClick}>Log Out</button>
       </div>
 
       <div>
         <MyBList userObj={userObj} />
       </div>
+
     </div>
   )
 }

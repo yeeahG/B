@@ -66,7 +66,7 @@ const BFactory = ({ userObj }) => {
           maxLength={120} 
         />
         <input type="file" accept="image/*" onChange={onFileChange} />
-        <input type="submit"  value="Be" />
+        <input className='button' type="submit" value="Be" />
         {fileAttach && 
         <div>
           <img src={fileAttach} width="50px" height="50px" /> 

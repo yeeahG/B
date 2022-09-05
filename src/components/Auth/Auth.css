@@ -31,7 +31,7 @@
     flex-direction: column;
 }
 
-.authInput {
+.input {
     border: none;
     outline: none;
     place-content: center;

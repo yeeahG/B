@@ -17,6 +17,19 @@ ul {
     padding: 0;
 }
 
+.button {
+    cursor: pointer;
+    border-radius: 100vw;
+    color: #f7f6f2;
+    background: #e65c64;
+    border: none;
+    min-height: calc(2rem + 2px);
+}
+
+.active {
+    color: #f7f6f2;
+}
+
 .app__container {
     /*background-color: #9ec9eb;*/
     display: flex;
@@ -34,15 +47,16 @@ ul {
 }
 
 .container {
-    width: 75%
+    width: 70%;
+    margin: 50px;
 }
 
 .navi__container {
-    width: 10%;
+    width: 15%;
     border: 1px solid #789bb5;
     background-color: #e65c64;
 }
 
-.navi__container li {
-    color: white;
+.navi__container ul {
+    margin: 20px;
 }

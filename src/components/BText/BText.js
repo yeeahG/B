@@ -54,9 +54,10 @@ const BText = ( {bObj, isOwner} ) => {
                     <input 
                         type="submit" 
                         value="Edit B"
+                        className='button' 
                     />
                 </form>
-                <button onClick={editingToggle}>Cancel</button>
+                <button className='button' onClick={editingToggle}>Cancel</button>
             </>
             }
         </>
