@@ -1,0 +1,13 @@
+.auth__btn {
+    
+}
+
+.authform__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__header {
+    display: block;
+}

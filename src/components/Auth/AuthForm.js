@@ -1,5 +1,6 @@
 import { authService } from 'myFirebase';
 import React, { useState } from 'react'
+import './Auth.css'
 
 const AuthForm = () => {
     const [email, setEmail] = useState("");
@@ -41,11 +42,6 @@ const AuthForm = () => {
 
   return (
     <div>
-
-        <span onClick={toggleAccount}>
-            {newAccount ? "Login" : "Create Account"}
-        </span>
-      
         {error}
         <form onSubmit={onSubmit} >
             <input 
@@ -66,6 +62,10 @@ const AuthForm = () => {
             />
             <input type="submit" value={newAccount ? "Create Account" : "Log in"} />
         </form>
+        
+        <span onClick={toggleAccount}>
+            {newAccount ? "Log in" : "Create Account"}
+        </span>
 
     </div>
   )

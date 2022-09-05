@@ -5,12 +5,18 @@ import Auth from '../routes/Auth'
 import Navigation from 'components/Navigation';
 import Profile from 'routes/Profile';
 import Chat from 'routes/Chat';
+import Header from './Header';
 
 const AppRouter = ({ isLoggedIn, userObj, refreshUser }) => {
 
   return (
     <Router>
-      {isLoggedIn && <Navigation userObj={userObj} />}
+      {isLoggedIn && 
+      <>
+        <Header />
+        <Navigation userObj={userObj} />
+      </>
+      }
       <Routes>
         {isLoggedIn ?
           <>

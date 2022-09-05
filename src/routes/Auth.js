@@ -1,6 +1,8 @@
 import AuthForm from 'components/Auth/AuthForm';
+import Header from 'components/Header';
 import { authService, firebaseInstance } from 'myFirebase';
 import React from 'react'
+import '../components/Auth/Auth.css'
 
 const Auth = () => {
 
@@ -19,10 +21,11 @@ const Auth = () => {
   }
 
   return (
-    <div>
+    <div className='authform__container'>
+      <div className='auth__header'><Header /></div>
       <AuthForm />
 
-      <div>
+      <div className='auth__btn'>
         <button name="google" onClick={onSocialClick}>Google</button>
         <button name="github" onClick={onSocialClick}>Github</button>
       </div>

@@ -38,7 +38,7 @@ function App() {
   return (
     <>
       <div className="app__container">
-        <Header />
+
         {init ? 
         <AppRouter 
           isLoggedIn={Boolean(userObj)} 
