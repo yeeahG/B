@@ -19,14 +19,6 @@ const Profile = ({ userObj, refreshUser }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
-    /*
-    if(userObj.displayName !== newDisplayName) {
-      await userObj.updateProfile({
-        displayName: newDisplayName,
-      });
-      refreshUser();
-    }
-    */
     if(userObj.displayName !== newDisplayName){
       await updateProfile(authService.currentUser, { 
         displayName: newDisplayName,
