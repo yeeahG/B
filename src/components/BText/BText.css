@@ -1,0 +1,9 @@
+.feed__container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 0.7fr;
+}
+
+.feed__btn {
+    
+}

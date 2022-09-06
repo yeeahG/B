@@ -1,6 +1,7 @@
+import React, { useState } from 'react'
 import { deleteObject, ref } from 'firebase/storage';
 import { dbService, storageService } from 'myFirebase';
-import React, { useState } from 'react'
+import './BText.css'
 
 const BText = ( {bObj, isOwner} ) => {
     const [editing, setEditing] = useState(false);
@@ -47,41 +48,44 @@ const BText = ( {bObj, isOwner} ) => {
             &&
             <>
                 <form onSubmit={onSubmit}>
-                    <input 
-                        type="text" 
-                        placeholder="Edit your B" 
-                        value={newB} required 
-                        onChange={onEditChange}
-                    />
-                    <input 
-                        type="submit" 
-                        value="Edit B"
-                        className='button' 
-                    />
+                    <label className='input__border'>
+                        <input 
+                            type="text" 
+                            placeholder="Edit your B" 
+                            value={newB} required 
+                            onChange={onEditChange}
+                            className='input'
+                        />
+                    </label>
+                        <input 
+                            type="submit" 
+                            value="Edit B"
+                            className='button' 
+                        />
                 </form>
                 <button className='button' onClick={editingToggle}>Cancel</button>
             </>
             }
         </>
         :
-        <>
-            <div>
-                {bObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />}
-            </div>
+        <div className='feed__container'>
 
-            {isOwner && (
-                <>
-                    <button className='button__two' onClick={onDeleteClick}>Delete</button>
-                    <button className='button__two' onClick={editingToggle}>Edit</button>
-                </>
-            )}
-
+            
             <div>
                 <h4>{bObj.text}</h4>
                 <h5>{strDate}</h5>
+                {isOwner && (
+                    <div className='feed__btn'>
+                        <button className='button__two' onClick={onDeleteClick}>Delete</button>
+                        <button className='button__two' onClick={editingToggle}>Edit</button>
+                    </div>
+                )}
+            </div>
+            <div>
+                {bObj.fileUrl && <img src={bObj.fileUrl} width='350px' />}
             </div>
 
-        </>
+        </div>
         }
     </div>
   )
