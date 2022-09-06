@@ -82,7 +82,7 @@ const EditProfile = ({ userObj }) => {
       {myPhoto ? 
         <>
           <img src={myPhoto[0].fileUrl} width="50px" height="50px" />
-          <button onClick={onDeleteClick}>Delete</button>
+          <button onClick={onDeleteClick} className='button__two'>Delete</button>
         </>
       :
       <div>

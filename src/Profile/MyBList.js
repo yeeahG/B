@@ -1,7 +1,6 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { dbService } from 'myFirebase';
 import React, { useEffect, useState } from 'react'
-import EditProfile from './EditProfile';
 
 const MyBList = ({ userObj }) => {
   const [myList, setMyList] = useState([]);
@@ -25,14 +24,10 @@ const MyBList = ({ userObj }) => {
   },[])
 
   return (
-    <>
-      <EditProfile userObj={userObj} />
-      
-      <div>
-        <h3>내 글 목록</h3>
-        {myList}
-      </div>
-    </>
+    <div>
+      <h3>내 글 목록</h3>
+      {myList}
+    </div>
   )
 }
 
