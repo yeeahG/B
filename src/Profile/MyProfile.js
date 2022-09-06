@@ -1,8 +1,9 @@
+import React, { useState } from 'react'
 import { updateProfile } from 'firebase/auth';
 import { authService } from 'myFirebase';
-import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import EditProfile from './EditProfile';
+import './Profile.css'
 
 const MyProfile = ({ userObj, refreshUser }) => {
     const navigate = useNavigate();
@@ -34,11 +35,14 @@ const MyProfile = ({ userObj, refreshUser }) => {
     
   return (
     <div>
-        <div>
-            <h2>Info</h2>
+        <h2>Info</h2>
+        <button className='button' onClick={onLogOutClick}>Log Out</button>
+        <div className='profile__container'>
             <EditProfile userObj={userObj} />
-            {userObj.displayName}
-            <button className='button' onClick={onLogOutClick}>Log Out</button>
+            <label className='profile__info'>
+                <h1>{userObj.displayName}</h1>
+                dddd
+            </label>
         </div>
 
         <form onSubmit={onSubmit}>

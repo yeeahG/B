@@ -4,7 +4,6 @@ import { deleteObject, getDownloadURL, ref, uploadString } from 'firebase/storag
 import { v4 as uuidv4 } from 'uuid';
 import './Profile.css'
 
-
 const EditProfile = ({ userObj }) => {
   const [myPhoto, setMyPhoto] = useState("");
   const [fileAttach, setFileAttach] = useState("");
@@ -81,7 +80,9 @@ const EditProfile = ({ userObj }) => {
     <div>
       {myPhoto ? 
         <>
-          <img src={myPhoto[0].fileUrl} width="50px" height="50px" />
+          <label className='profile__poto'>
+            <img src={myPhoto[0].fileUrl} width="100px" height="100px" />
+          </label>
           <button onClick={onDeleteClick} className='button__two'>Delete</button>
         </>
       :
@@ -90,7 +91,7 @@ const EditProfile = ({ userObj }) => {
         <>
           {fileAttach && 
           <div>
-            <img src={fileAttach} width="50px" height="50px" />
+            <img src={fileAttach} width="100px" height="100px" />
             <button onClick={onClearFile}>X</button>
             <button onClick={onSubmit}>O</button>
           </div>
