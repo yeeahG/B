@@ -36,6 +36,8 @@ const BText = ( {bObj, isOwner} ) => {
         setEditing(false);
     }
 
+    const strDate = new Date(parseInt(bObj.createdAt)).toLocaleDateString();
+
   return (
     <div>
 
@@ -63,15 +65,22 @@ const BText = ( {bObj, isOwner} ) => {
         </>
         :
         <>
-            <h4>{bObj.text}</h4>
-            {bObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />}
+            <div>
+                {bObj.fileUrl && <img src={bObj.fileUrl} width='50px' height='50px' />}
+            </div>
 
             {isOwner && (
                 <>
-                <button onClick={onDeleteClick}>Delete</button>
-                <button onClick={editingToggle}>Edit</button>
+                    <button className='button__two' onClick={onDeleteClick}>Delete</button>
+                    <button className='button__two' onClick={editingToggle}>Edit</button>
                 </>
             )}
+
+            <div>
+                <h4>{bObj.text}</h4>
+                <h5>{strDate}</h5>
+            </div>
+
         </>
         }
     </div>

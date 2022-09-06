@@ -5,6 +5,7 @@ import EditProfile from './EditProfile';
 
 const MyBList = ({ userObj }) => {
   const [myList, setMyList] = useState([]);
+  const [myListDate, setMyListDate] = useState([]);
 
   const getMyBees = async() => {
     const data = query(
@@ -14,7 +15,9 @@ const MyBList = ({ userObj }) => {
     const queryBees = await getDocs(data);
     queryBees.forEach((it) => {
       setMyList(it.data().text);
+      setMyListDate(it.data().createdAt);
     })
+    console.log(queryBees);
   }
 
   useEffect(() => {

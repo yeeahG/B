@@ -5,8 +5,6 @@
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
 }
 
-* {
-}
 
 a {
     text-decoration: none;
@@ -24,6 +22,15 @@ ul {
     color: #f7f6f2;
     background: #e65c64;
     border: none;
+    min-height: calc(2rem + 2px);
+}
+
+.button__two {
+    cursor: pointer;
+    border-radius: 100vw;
+    color: #e65c64;
+    background-color: transparent;
+    border: 2px solid #e65c64;
     min-height: calc(2rem + 2px);
 }
 
