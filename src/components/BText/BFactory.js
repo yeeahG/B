@@ -56,23 +56,26 @@ const BFactory = ({ userObj }) => {
 
   return (
     <div>
-        
-        <form onSubmit={onSubmit}>
-        <input 
-          value={b}
-          onChange={onChange}
-          type="text" 
-          placeholder="What's on ur mind?" 
-          maxLength={120} 
-        />
-        <input type="file" accept="image/*" onChange={onFileChange} />
-        <input className='button' type="submit" value="Be" />
+
+      <form onSubmit={onSubmit}>
         {fileAttach && 
-        <div>
-          <img src={fileAttach} width="50px" height="50px" /> 
-          <button onClick={onClearFile}>X</button>
-        </div>
+          <div>
+            <img src={fileAttach} width="50px" height="50px" /> 
+            <button onClick={onClearFile}>X</button>
+          </div>
         }
+        <label className='input__border'>
+          <input 
+            value={b}
+            onChange={onChange}
+            type="text" 
+            placeholder="What's on ur mind?" 
+            maxLength={120} 
+            className='input'
+          />
+        </label>
+          <input type="file" accept="image/*" onChange={onFileChange} />
+          <input className='button' type="submit" value="Be" />
       </form>
       
     </div>

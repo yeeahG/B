@@ -31,23 +31,7 @@
     flex-direction: column;
 }
 
-.input {
-    border: none;
-    outline: none;
-    place-content: center;
-    justify-self: stretch;
-    align-self: stretch;
-    min-height: calc(2rem + 2px);
-}
 
-.input__border {
-    margin: .4rem 0;
-    line-height: 1rem;
-    min-height: calc(2rem + 2px);
-    align-items: center;
-    padding: 0.25rem 1rem;
-    border: 1px solid #e65c64;
-}
 
 .authInput__btn {
     cursor: pointer;

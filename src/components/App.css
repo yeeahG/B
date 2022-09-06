@@ -48,14 +48,14 @@ ul {
     font-size: 200px;
    /*font-family: 'Luckiest Guy', cursive;*/
     font-family: 'Alumni Sans Collegiate One', sans-serif;
-    width: 15%;
+    width: 30%;
     text-align: center;
     /*color: #f5ca66;*/
     color: #e65c64;
 }
 
 .container {
-    width: 70%;
+    width: 100%;
     margin: 50px;
 }
 
@@ -67,4 +67,22 @@ ul {
 
 .navi__container ul {
     margin: 20px;
+}
+
+.input {
+    border: none;
+    outline: none;
+    place-content: center;
+    justify-self: stretch;
+    align-self: stretch;
+    min-height: calc(2rem + 2px);
+}
+
+.input__border {
+    margin: .4rem 0;
+    line-height: 1rem;
+    min-height: calc(2rem + 2px);
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border: 1px solid #e65c64;
 }
