@@ -16,7 +16,6 @@ const MyBList = ({ userObj }) => {
       setMyList(it.data().text);
       setMyListDate(it.data().createdAt);
     })
-    console.log(queryBees);
   }
 
   useEffect(() => {

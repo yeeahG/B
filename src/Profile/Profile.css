@@ -24,6 +24,15 @@
     margin: 0;
 }
 
+.profile__notedit {
+    display: flex;
+}
+
+.profile__notedit h1, .profile__notedit .feed__btn {
+    padding: 0.25rem 0.75rem;
+    min-height: calc(1.5rem + 2px);
+}
+
 /*Edit*/
 .profile__poto {
     display: flex;
